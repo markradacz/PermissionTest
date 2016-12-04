@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:local="clr-namespace:PermissionTest"
+	xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+	x:Class="PermissionTest.PermissionTestPage"
+	Title="{Binding Title}"
+	Icon="{Binding Icon}"
+	IsBusy="{Binding IsBusy}">
+       <StackLayout 
+		Padding="0"
+		VerticalOptions="StartAndExpand" 
+		Orientation="Vertical">
+        <SearchBar x:Name="AddressSearchBar"
+            Placeholder="Search by Address or Zip Code"/>
+        <maps:Map 
+			x:Name="ConvenientCareMap"
+			AutomationId="ConvenientCareMap"
+			HorizontalOptions="FillAndExpand"
+			VerticalOptions="Start"
+			HeightRequest="200"
+			IsShowingUser="true"
+			MapType="Street"/>
+        <StackLayout
+            HorizontalOptions="FillAndExpand" 
+            Orientation="Vertical" 
+            Spacing="10" 
+            Padding="10"
+            IsVisible="{Binding IsBusy}">
+            <ActivityIndicator HorizontalOptions="Center"
+               Color="#9C27B0"
+			   IsRunning="{Binding IsBusy}"
+			   IsVisible="{Binding IsBusy}"/>
+            <Label HorizontalOptions="Center"
+    	       VerticalOptions="Center" 
+    	       Text="Loading..."/>
+        </StackLayout>
+        <ListView 
+			IsVisible="{Binding IsNotBusy}"
+			x:Name="ConvenientCareListView"
+			AutomationId="ConvenientCareList"
+			ItemsSource="{Binding OrderedConvenientCares}"
+			HasUnevenRows="true">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell x:Name="viewCell">
+                        <Grid BackgroundColor="White">
+                            <Grid.Padding>
+                                <OnPlatform x:TypeArguments="Thickness">
+                                    <OnPlatform.iOS>
+                                        10,5,10,5
+                                    </OnPlatform.iOS>
+                                    <OnPlatform.Android>
+                                        10,5,10,5
+                                    </OnPlatform.Android>
+                                    <OnPlatform.WinPhone>
+                                        20,25,20,25
+                                    </OnPlatform.WinPhone>
+                                </OnPlatform>
+                            </Grid.Padding>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout 
+		                                Padding="8" 
+		                                Spacing="2"
+                                        HorizontalOptions="StartAndExpand"
+		                                VerticalOptions="Center">
+                                <StackLayout 
+		                           Spacing="10"
+		                           HorizontalOptions="StartAndExpand"
+                                   Orientation="Horizontal">
+                                    <Label Text="{Binding Name}" FontSize="Medium" TextColor="Black" LineBreakMode="WordWrap"/>
+                                    <Label 
+                                        Text="{Binding WaitTimeText}" 
+                                        FontSize="8" 
+                                        HeightRequest="12"
+                                        TextColor="White" 
+                                        BackgroundColor="Green"
+                                        FontAttributes="Bold"
+                                        LineBreakMode="WordWrap"
+                                        HorizontalOptions="StartAndExpand"
+                                        VerticalOptions="Center"/>
+                                </StackLayout>
+                                <Label Text="{Binding DistanceFromLocation, StringFormat='{0:N1} mi'}" FontSize="Small" LineBreakMode="WordWrap"/>
+                                <Label Text="{Binding Address}" FontSize="Small" LineBreakMode="WordWrap"/>
+                            </StackLayout>
+                            <StackLayout 
+ 								AutomationId="PhoneBtn"
+                                Grid.Column="1" 
+		                        Padding="8" 
+		                        Spacing="2"
+                                HorizontalOptions="Center"
+		                        VerticalOptions="Center">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer 
+                                        BindingContext="{Binding Source={x:Reference ConvenientCareListView}, Path=BindingContext}"
+                                        Command="{Binding OnCallTappedCommand}"
+                                        CommandParameter="{Binding Source={x:Reference viewCell}, Path=BindingContext}" />
+                                </StackLayout.GestureRecognizers>
+                                <Label
+                                    Text="CALL" 
+                                    FontSize="Large" 
+                                    TextColor="#3498DB" 
+                                    HorizontalOptions="Center"/>
+                            </StackLayout>
+                            <StackLayout
+								AutomationId="DirectionsBtn"
+                                Grid.Column="2" 
+		                        Padding="8" 
+		                        Spacing="2"
+                                HorizontalOptions="Center"
+		                        VerticalOptions="Center">
+                                <Label 
+                                    Text="DIRECTIONS" 
+                                    FontSize="Large" 
+                                    TextColor="#3498DB" 
+                                    HorizontalOptions="Center"/>
+                            </StackLayout>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+			<ListView.Footer>
+				<Label />
+			</ListView.Footer>
+        </ListView>
+        </StackLayout>
+</ContentPage>

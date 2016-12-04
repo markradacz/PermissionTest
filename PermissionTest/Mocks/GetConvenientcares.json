@@ -1,0 +1,86 @@
+﻿[
+  {
+    "name": "Craig Convenient Care",
+    "address": "1513 W. Craig Rd, North Las Vegas, NV 89032",
+    "latitude": 36.2388918,
+    "longitude": -115.1629623,
+    "url": "https://maps.google.com/maps?saddr=&daddr=1513 W. Craig Rd, North Las Vegas, NV 89032",
+    "phoneNumber": "(702) 395-0108",
+    "estimatedWaitTime": 0,
+    "waitTimeColor": "#66CC33",
+    "hours": "8:00 AM - 8:00 PM ",
+    "numberOfPatientsWaiting": 0
+  },
+  {
+    "name": "Lake Mead Convenient Care",
+    "address": "310 W Lake Mead Pkwy, Henderson, NV 89015",
+    "latitude": 36.0363489,
+    "longitude": -114.9927811,
+    "url": "https://maps.google.com/maps?saddr=&daddr=310 W Lake Mead Pkwy, Henderson, NV 89015",
+    "phoneNumber": "(702) 677-3720",
+    "estimatedWaitTime": 0,
+    "waitTimeColor": "#66CC33",
+    "hours": "8:00 AM - 8:00 PM ",
+    "numberOfPatientsWaiting": 0
+  },
+  {
+    "name": "Oakey Healthcare Center",
+    "address": "4750 West Oakey Blvd, Las Vegas, NV 89102",
+    "latitude": 36.1522332,
+    "longitude": -115.2064474,
+    "url": "https://maps.google.com/maps?saddr=&daddr=4750 West Oakey Blvd, Las Vegas, NV 89102",
+    "phoneNumber": "(702) 877-5199",
+    "estimatedWaitTime": 0,
+    "waitTimeColor": "#66CC33",
+    "hours": "Closed",
+    "numberOfPatientsWaiting": 0
+  },
+  {
+    "name": "Nellis Healthcare Center",
+    "address": "540 North Nellis, Las Vegas, NV 89110",
+    "latitude": 36.1689692,
+    "longitude": -115.0605126,
+    "url": "https://maps.google.com/maps?saddr=&daddr=540 North Nellis, Las Vegas, NV 89110",
+    "phoneNumber": "(702) 877-5199",
+    "estimatedWaitTime": 0,
+    "waitTimeColor": "#66CC33",
+    "hours": "Closed",
+    "numberOfPatientsWaiting": 0
+  },
+  {
+    "name": "Durango Convenient Care",
+    "address": "7150 South Durango Drive, Las Vegas, NV 89113 ",
+    "latitude": 36.0580646,
+    "longitude": -115.2783945,
+    "url": "https://maps.google.com/maps?saddr=&daddr=7150 South Durango Drive, Las Vegas, NV 89113 ",
+    "phoneNumber": "(702) 877-5199",
+    "estimatedWaitTime": 0,
+    "waitTimeColor": "#66CC33",
+    "hours": "Closed",
+    "numberOfPatientsWaiting": 0
+  },
+  {
+    "name": "Valle Verde Convenient Care",
+    "address": "75 S. Valle Verde, Henderson NV 89012-3462",
+    "latitude": 36.0242993,
+    "longitude": -115.0630867,
+    "url": "https://maps.google.com/maps?saddr=&daddr=75 S. Valle Verde, Henderson NV 89012-3462",
+    "phoneNumber": null,
+    "estimatedWaitTime": 0,
+    "waitTimeColor": "#66CC33",
+    "hours": "Closed",
+    "numberOfPatientsWaiting": 0
+  },
+  {
+    "name": "Tropicana Healthcare Center",
+    "address": "4835 S Durango, Las Vegas, NV 89147-8171",
+    "latitude": 36.1015721,
+    "longitude": -115.2798613,
+    "url": "https://maps.google.com/maps?saddr=&daddr=4835 S Durango, Las Vegas, NV 89147-8171",
+    "phoneNumber": "(702) 877-5199",
+    "estimatedWaitTime": 0,
+    "waitTimeColor": "#66CC33",
+    "hours": "Closed",
+    "numberOfPatientsWaiting": 0
+  }
+]
